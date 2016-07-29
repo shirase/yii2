@@ -87,13 +87,7 @@ class ViewAction extends Action
                 $this->controller->layout = $controllerLayout;
             }
 
-            if (YII_DEBUG) {
-                throw $e;
-            } else {
-                throw new NotFoundHttpException(
-                    Yii::t('yii', 'The requested view "{name}" was not found.', ['name' => $viewName])
-                );
-            }
+            throw $e;
         }
 
         return $output;
