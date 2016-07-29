@@ -88,7 +88,7 @@ class ViewAction extends Action
             }
 
             if (YII_DEBUG) {
-                throw new NotFoundHttpException($e->getMessage());
+                throw $e;
             } else {
                 throw new NotFoundHttpException(
                     Yii::t('yii', 'The requested view "{name}" was not found.', ['name' => $viewName])
